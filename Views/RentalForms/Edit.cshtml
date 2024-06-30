@@ -1,0 +1,45 @@
+@model RentalForm
+
+@{
+    ViewData["Title"] = "Edycja wypożyczenia";
+}
+
+<div class="container">
+    <h1>@ViewData["Title"]</h1>
+    <form asp-controller="RentalForms" asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Imię i nazwisko</label>
+            <input asp-for="Name" class="form-control" required>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Adres email</label>
+            <input asp-for="Email" class="form-control" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Phone" class="form-label">Numer telefonu</label>
+            <input asp-for="Phone" class="form-control" required>
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PickupDate" class="form-label">Data odbioru</label>
+            <input asp-for="PickupDate" class="form-control" required>
+            <span asp-validation-for="PickupDate" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="LeavingDate" class="form-label">Data zwrotu</label>
+            <input asp-for="LeavingDate" class="form-control" required>
+            <span asp-validation-for="LeavingDate" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Zapisz zmiany</button>
+        <a asp-controller="RentalForms" asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    </form>
+</div>

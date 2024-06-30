@@ -1,0 +1,47 @@
+@model IEnumerable<RentalForm>
+@{
+    ViewData["Title"] = "All Submitted Rental Forms";
+}
+
+<div class="container">
+    <h1>All Submitted Rental Forms</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imię Nazwisko</th>
+                <th>Email</th>
+                <th>Telefon</th>
+                <th>Data odbioru</th>
+                <th>Data zwrotu</th>
+                <th>CarId</th>
+                <th>UserId</th>
+                <th>Akcje</th> <!-- New column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var form in Model)
+            {
+                <tr>
+                    <td>@form.Id</td>
+                    <td>@form.Name</td>
+                    <td>@form.Email</td>
+                    <td>@form.Phone</td>
+                    <td>@form.PickupDate</td>
+                    <td>@form.LeavingDate</td>
+                    <td>@form.CarId</td>
+                    <td>@form.UserId</td>
+                    <td>
+                        <!-- Edit button -->
+                        <a asp-controller="RentalForms" asp-action="Edit" asp-route-id="@form.Id" class="btn btn-primary">Edytuj</a>
+                        
+                        <!-- Delete button -->
+                        <form asp-controller="RentalForms" asp-action="Delete" asp-route-id="@form.Id" method="post" onsubmit="return confirm('Czy na pewno chcesz usunąć ten formularz wynajmu?');">
+                            <button type="submit" class="btn btn-danger">Usuń</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

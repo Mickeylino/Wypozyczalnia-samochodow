@@ -1,0 +1,68 @@
+# ASP.NET #
+############
+
+# Visual Studio Code #
+.vscode/
+
+# Visual Studio editor files #
+*.user
+*.suo
+*.sln.docstates
+
+# Rider #
+.idea/
+
+# User-specific files #
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.ide
+
+# Compiled files #
+bin/
+obj/
+
+# NuGet Packages #
+*.nuget.props
+*.nuget.targets
+*.lock.json
+.paket/
+packages/
+
+# RIA/Silverlight projects #
+Generated_Code/
+
+# Windows image file caches #
+Thumbs.db
+ehthumbs.db
+
+# macOS #
+.DS_Store
+
+# Logs and databases #
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.pdb
+
+# Visual Studio Code #
+.vscode/
+*.launch.json
+*.history
+*.json
+
+# Test Results #
+TestResults/
+
+# Tye #
+.tye/
+
+# Others #
+node_modules/
+bower_components/
+*.bak
+*.cache
+*.vs
+
